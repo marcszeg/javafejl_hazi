@@ -1,0 +1,5 @@
+#Fri Apr 23 13:32:36 CEST 2021
+configuration*?=41F672D1CDF396272E816DB154BDF3FCC9D2FB4F
+module-resource*?\:checkstyle-xpath-suppressions.xml=66A3CF237D812B5DB507EEC74730C7295BC6AE7E
+module-resource*?\:checkstyle-suppressions.xml=CAA088B79A1315D5588DC34C15B69E46AC41D77F
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\Application.java=1619033453000
