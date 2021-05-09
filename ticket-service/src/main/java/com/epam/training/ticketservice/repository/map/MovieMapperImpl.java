@@ -2,7 +2,9 @@ package com.epam.training.ticketservice.repository.map;
 
 import com.epam.training.ticketservice.dataaccess.entity.MovieEntity;
 import com.epam.training.ticketservice.domain.Movie;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MovieMapperImpl implements  MovieMapper{
 
     @Override

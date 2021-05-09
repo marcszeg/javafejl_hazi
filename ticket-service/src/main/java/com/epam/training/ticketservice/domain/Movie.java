@@ -2,7 +2,6 @@ package com.epam.training.ticketservice.domain;
 
 import javax.persistence.*;
 
-@Entity
 public class Movie {
 
     private String title;
@@ -30,15 +29,4 @@ public class Movie {
         return length;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
 }
