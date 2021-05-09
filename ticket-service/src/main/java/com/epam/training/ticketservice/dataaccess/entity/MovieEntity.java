@@ -1,28 +1,23 @@
-package com.epam.training.ticketservice.movie.entity;
+package com.epam.training.ticketservice.dataaccess.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-public class Movie {
+public class MovieEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
     private String title;
     private String genre;
     private int length;
 
-    public Movie(){
-    }
 
-    public Movie(Integer id, String title, String genre, int length) {
-        this.id = id;
+    public MovieEntity(String title, String genre, int length) {
         this.title = title;
         this.genre = genre;
         this.length = length;
     }
 
-    public Integer getId() {
-        return id;
+    public MovieEntity() {
     }
 
     public String getTitle() {
@@ -35,10 +30,6 @@ public class Movie {
 
     public int getLength() {
         return length;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public void setTitle(String title) {
