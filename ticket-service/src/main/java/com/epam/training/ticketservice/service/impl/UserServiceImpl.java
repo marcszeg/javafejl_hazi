@@ -14,6 +14,11 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private User loggedInUser;
 
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+        loggedInUser = null;
+    }
+
     @Override
     public void logInAdmin(String username, String password) throws LoginFailException {
         try {

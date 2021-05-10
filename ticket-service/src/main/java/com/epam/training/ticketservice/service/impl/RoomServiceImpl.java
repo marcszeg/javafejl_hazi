@@ -14,6 +14,10 @@ public class RoomServiceImpl implements RoomService {
 
     private RoomRepository roomRepository;
 
+    public RoomServiceImpl(RoomRepository roomRepository) {
+        this.roomRepository = roomRepository;
+    }
+
 
     @Override
     public void createRoom(String name, int rows, int columns) throws RoomExistsException {

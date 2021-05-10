@@ -17,15 +17,16 @@ public class MovieController {
     private MovieService movieService;
     private AdminMethodCheck adminMethodCheck;
 
-    public MovieController(MovieService movieService) {
+    public MovieController(MovieService movieService, AdminMethodCheck adminMethodCheck) {
         this.movieService = movieService;
+        this.adminMethodCheck = adminMethodCheck;
     }
 
     public Availability isAdminSignedIn() {
         return adminMethodCheck.isAdminSignedIn();
     }
 
-    @ShellMethod(key = "create movie")
+    @ShellMethod(value = "Create a movie", key = "create movie")
     @ShellMethodAvailability("isAdminSignedIn")
     public String createMovie(String title, String genre, int length) {
         String answer;
@@ -38,7 +39,7 @@ public class MovieController {
         return answer;
     }
 
-    @ShellMethod(key = "update movie")
+    @ShellMethod(value = "Update a movie", key = "update movie")
     @ShellMethodAvailability("isAdminSignedIn")
     public String updateMovie(String title, String genre, int length) {
         String answer;
@@ -51,7 +52,7 @@ public class MovieController {
         return answer;
     }
 
-    @ShellMethod(key = "delete movie")
+    @ShellMethod(value = "Delete a movie", key = "delete movie")
     @ShellMethodAvailability("isAdminSignedIn")
     public String deleteMovie(String title) {
         String answer;
@@ -64,7 +65,7 @@ public class MovieController {
         return answer;
     }
 
-    @ShellMethod(key = "list movies")
+    @ShellMethod(value = "List all movies", key = "list movies")
     public String listMovies() {
         List<Movie> movies = movieService.listMovies();
         return movies.isEmpty() ? "There are no movies at the moment"

@@ -12,7 +12,12 @@ import java.util.List;
 
 @Service
 public class MovieServiceImpl implements MovieService {
+
     private MovieRepository movieRepository;
+
+    public MovieServiceImpl(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
     @Override
     public void createMovie(String title, String genre, int length) throws MovieExistsException {

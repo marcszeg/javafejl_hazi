@@ -17,6 +17,11 @@ public class MovieRepositoryImpl implements MovieRepository {
     private MovieDao movieDao;
     private MovieMapper movieMapper;
 
+    public MovieRepositoryImpl(MovieDao movieDao, MovieMapper movieMapper) {
+        this.movieDao = movieDao;
+        this.movieMapper = movieMapper;
+    }
+
     @Override
     public void createMovie(Movie movie) throws MovieExistsException {
         if (isMovieAlreadyExists(movie.getTitle())) {

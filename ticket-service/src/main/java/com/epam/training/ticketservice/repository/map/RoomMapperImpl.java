@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoomMapperImpl implements RoomMapper {
 
+    public RoomMapperImpl() {
+    }
+
     @Override
     public Room fromMapToRoom(RoomEntity roomEntity) {
         return new Room(roomEntity.getName(), roomEntity.getRows(), roomEntity.getColumns());

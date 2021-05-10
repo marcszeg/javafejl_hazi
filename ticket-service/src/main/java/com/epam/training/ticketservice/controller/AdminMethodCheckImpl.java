@@ -19,7 +19,10 @@ public class AdminMethodCheckImpl implements AdminMethodCheck {
     public Availability isAdminSignedIn() {
         try {
             User user = userService.getUserInfo();
-            return Availability.available();
+            //return Availability.available();
+            return user.isAdmin()
+                    ? Availability.available()
+                    : Availability.unavailable("admin");
         } catch (NotSignedInException exception) {
             return Availability.unavailable("You are not signed in");
         }

@@ -15,7 +15,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @ShellMethod(key = "sign in privileged")
+    @ShellMethod(value = "Sign in as admin", key = "sign in privileged")
     public String logInAdmin(String username, String password) {
         String answer;
         try {
@@ -27,13 +27,14 @@ public class UserController {
         return answer;
     }
 
-    @ShellMethod(key = "sign out")
+    @ShellMethod(value = "Sign out", key = "sign out")
     public String signOut() {
         String answer = "Signed out";
+        userService.signOut();
         return answer;
     }
 
-    @ShellMethod(key = "describe account")
+    @ShellMethod(value = "Describe the account", key = "describe account")
     public String describeAccount() {
         String answer;
         User user = null;

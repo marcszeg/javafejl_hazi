@@ -18,6 +18,11 @@ public class RoomRepositoryImpl implements RoomRepository {
     private RoomDao roomDao;
     private RoomMapper roomMapper;
 
+    public RoomRepositoryImpl(RoomDao roomDao, RoomMapper roomMapper) {
+        this.roomDao = roomDao;
+        this.roomMapper = roomMapper;
+    }
+
     @Override
     public void createRoom(Room room) throws RoomExistsException {
         if (isRoomAlreadyExsists(room.getName())) {

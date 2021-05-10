@@ -10,6 +10,10 @@ public class UserDatabaseAdminInit {
 
     private UserDao userDao;
 
+    public UserDatabaseAdminInit(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     @PostConstruct
     public void databaseAdminInit() {
         userDao.save(new UserEntity("admin", "admin", true));

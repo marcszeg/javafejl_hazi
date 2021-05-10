@@ -17,28 +17,29 @@ public class RoomController {
     private RoomService roomService;
     private AdminMethodCheck adminMethodCheck;
 
-    public RoomController(RoomService roomService) {
+    public RoomController(RoomService roomService, AdminMethodCheck adminMethodCheck) {
         this.roomService = roomService;
+        this.adminMethodCheck = adminMethodCheck;
     }
 
     public Availability isAdminSignedIn() {
         return adminMethodCheck.isAdminSignedIn();
     }
 
-    @ShellMethod(key = "create room")
+    @ShellMethod(value = "Create a room", key = "create room")
     @ShellMethodAvailability("isAdminSignedIn")
     public String createRoom(String name, int rows, int columns) {
         String answer;
         try {
             roomService.createRoom(name, rows, columns);
-            answer = "Movie created";
+            answer = "Room created";
         } catch (RoomExistsException exception) {
             answer = exception.getMessage();
         }
         return answer;
     }
 
-    @ShellMethod(key = "update room")
+    @ShellMethod(value = "Update a room", key = "update room")
     @ShellMethodAvailability("isAdminSignedIn")
     public String updateRoom(String name, int rows, int columns) {
         String answer;
@@ -51,7 +52,7 @@ public class RoomController {
         return answer;
     }
 
-    @ShellMethod(key = "delete room")
+    @ShellMethod(value = "Delete a room", key = "delete room")
     @ShellMethodAvailability("isAdminSignedIn")
     public String deleteRoom(String name) {
         String answer;
@@ -64,7 +65,7 @@ public class RoomController {
         return answer;
     }
 
-    @ShellMethod(key = "list rooms")
+    @ShellMethod(value = "List all rooms", key = "list rooms")
     public String listRooms() {
         List<Room> rooms = roomService.listRooms();
         return rooms.isEmpty() ? "There are no rooms at the moment"
