@@ -8,9 +8,6 @@ public class Movie {
     private String genre;
     private int length;
 
-    public Movie(){
-    }
-
     public Movie(String title, String genre, int length) {
         this.title = title;
         this.genre = genre;

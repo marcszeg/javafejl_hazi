@@ -20,7 +20,7 @@ public class MovieRepositoryImpl implements MovieRepository {
     @Override
     public void createMovie(Movie movie) throws MovieExistsException {
         if(isMovieAlreadyExists(movie.getTitle())){
-            throw new MovieExistsException(String.format("This movie already exists."));
+            throw new MovieExistsException("This movie already exists.");
         }
         movieDao.save(movieMapper.fromMapToMovieEntity(movie));
     }
@@ -32,7 +32,7 @@ public class MovieRepositoryImpl implements MovieRepository {
     @Override
     public void updateMovie(Movie movie) throws MovieNotFoundException {
         if(!isMovieAlreadyExists(movie.getTitle())){
-            throw new MovieNotFoundException(String.format("Movie not found"));
+            throw new MovieNotFoundException("Movie not found");
         }
         MovieEntity updatedMovie = getMovieByTitle(movie.getTitle());
         updatedMovie.setGenre(movie.getGenre());
@@ -49,7 +49,7 @@ public class MovieRepositoryImpl implements MovieRepository {
     @Override
     public void deleteMovie(String title) throws MovieNotFoundException {
         if(!isMovieAlreadyExists(title)){
-            throw new MovieNotFoundException(String.format("Movie not found"));
+            throw new MovieNotFoundException("Movie not found");
         }
         movieDao.deleteById(title);
     }
