@@ -56,6 +56,7 @@ public class MovieController {
         return answer;
     }
 
+    @ShellMethod(key = "list movies")
     public String listMovies(){
         List<Movie> movies = movieService.listMovies();
         return movies.isEmpty() ? "There are no movies at the moment"

@@ -23,7 +23,7 @@ public class RoomRepositoryImpl implements RoomRepository {
         if(isRoomAlreadyExsists(room.getName())){
             throw new RoomExistsException(String.format("This room already exists"));
         }
-        roomDao.save(roomMapper.fromMapToEntityRoom(room));
+        roomDao.save(roomMapper.fromMapToRoomEntity(room));
     }
 
     private boolean isRoomAlreadyExsists(String name) {

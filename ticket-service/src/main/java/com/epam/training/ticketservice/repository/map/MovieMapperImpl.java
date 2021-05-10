@@ -12,8 +12,7 @@ public class MovieMapperImpl implements  MovieMapper{
         return new Movie(movieEntity.getTitle(), movieEntity.getGenre(), movieEntity.getLength());
     }
 
-    @Override
-    public MovieEntity fromMapToEntityMovie(Movie movie) {
+    public MovieEntity fromMapToMovieEntity(Movie movie) {
         return new MovieEntity(movie.getTitle(), movie.getGenre(), movie.getLength());
     }
 }

@@ -12,7 +12,6 @@ public class Room {
         this.columns = columns;
     }
 
-
     public String getName() {
         return name;
     }
@@ -24,4 +23,5 @@ public class Room {
     public int getColumns() {
         return columns;
     }
+
 }

@@ -6,5 +6,5 @@ import com.epam.training.ticketservice.domain.Room;
 public interface RoomMapper {
     Room fromMapToRoom(RoomEntity roomEntity);
 
-    RoomEntity fromMapToEntityRoom(Room room);
+    RoomEntity fromMapToRoomEntity(Room room);
 }

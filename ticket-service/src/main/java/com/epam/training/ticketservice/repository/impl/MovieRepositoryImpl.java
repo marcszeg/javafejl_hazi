@@ -22,7 +22,7 @@ public class MovieRepositoryImpl implements MovieRepository {
         if(isMovieAlreadyExists(movie.getTitle())){
             throw new MovieExistsException(String.format("This movie already exists."));
         }
-        movieDao.save(movieMapper.fromMapToEntityMovie(movie));
+        movieDao.save(movieMapper.fromMapToMovieEntity(movie));
     }
 
     private boolean isMovieAlreadyExists(String title) {

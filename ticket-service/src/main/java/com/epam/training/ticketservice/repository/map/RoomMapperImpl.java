@@ -13,7 +13,7 @@ public class RoomMapperImpl implements RoomMapper{
     }
 
     @Override
-    public RoomEntity fromMapToEntityRoom(Room room) {
+    public RoomEntity fromMapToRoomEntity(Room room) {
         return new RoomEntity(room.getName(), room.getRows(), room.getColumns());
     }
 }

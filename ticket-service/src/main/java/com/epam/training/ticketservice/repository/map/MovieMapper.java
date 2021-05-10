@@ -6,5 +6,5 @@ import com.epam.training.ticketservice.domain.Movie;
 public interface MovieMapper {
     Movie fromMapToMovie(MovieEntity movieEntity);
 
-    MovieEntity fromMapToEntityMovie(Movie movie);
+    MovieEntity fromMapToMovieEntity(Movie movie);
 }
