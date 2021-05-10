@@ -4,8 +4,10 @@ import com.epam.training.ticketservice.domain.Movie;
 import com.epam.training.ticketservice.repository.exception.MovieExistsException;
 import com.epam.training.ticketservice.repository.exception.MovieNotFoundException;
 import com.epam.training.ticketservice.service.MovieService;
+import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellMethodAvailability;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,14 +15,18 @@ import java.util.stream.Collectors;
 @ShellComponent
 public class MovieController {
     private MovieService movieService;
-    //private String noMovies = "There are no movies at the moment";
-    //private String movieListingFormat = "%s (%s, %d minutes)";
+    private AdminMethodCheck adminMethodCheck;
 
     public MovieController(MovieService movieService){
         this.movieService = movieService;
     }
 
+    public Availability isAdminSignedIn(){
+        return adminMethodCheck.isAdminSignedIn();
+    }
+
     @ShellMethod(key = "create movie")
+    @ShellMethodAvailability("isAdminSignedIn")
     public String createMovie(String title, String genre, int length){
         String answer;
         try {
@@ -33,6 +39,7 @@ public class MovieController {
     }
 
     @ShellMethod(key = "update movie")
+    @ShellMethodAvailability("isAdminSignedIn")
     public String updateMovie(String title, String genre, int length){
         String answer;
         try {
@@ -45,6 +52,7 @@ public class MovieController {
     }
 
     @ShellMethod(key = "delete movie")
+    @ShellMethodAvailability("isAdminSignedIn")
     public String deleteMovie(String title){
         String answer;
         try {

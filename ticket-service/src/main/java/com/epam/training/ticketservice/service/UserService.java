@@ -6,7 +6,7 @@ import com.epam.training.ticketservice.service.exception.NotSignedInException;
 
 public interface UserService {
 
-    void signInAdmin(String username, String password) throws LoginFailException;
+    void logInAdmin(String username, String password) throws LoginFailException;
 
     void signOut();
 

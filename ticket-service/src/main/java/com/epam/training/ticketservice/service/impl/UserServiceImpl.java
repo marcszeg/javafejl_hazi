@@ -6,14 +6,16 @@ import com.epam.training.ticketservice.repository.exception.UserNotFoundExceptio
 import com.epam.training.ticketservice.service.exception.LoginFailException;
 import com.epam.training.ticketservice.service.exception.NotSignedInException;
 import com.epam.training.ticketservice.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private User loggedInUser;
 
     @Override
-    public void signInAdmin(String username, String password) throws LoginFailException {
+    public void logInAdmin(String username, String password) throws LoginFailException {
         try {
             User user = userRepository.getUserByUsername(username);
             if(!user.getPassword().equals(password)){
