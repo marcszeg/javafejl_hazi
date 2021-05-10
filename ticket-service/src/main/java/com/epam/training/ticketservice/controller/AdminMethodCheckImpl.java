@@ -7,11 +7,11 @@ import org.springframework.shell.Availability;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdminMethodCheckImpl implements  AdminMethodCheck{
+public class AdminMethodCheckImpl implements AdminMethodCheck {
 
     private UserService userService;
 
-    public AdminMethodCheckImpl(UserService userService){
+    public AdminMethodCheckImpl(UserService userService) {
         this.userService = userService;
     }
 
@@ -20,7 +20,7 @@ public class AdminMethodCheckImpl implements  AdminMethodCheck{
         try {
             User user = userService.getUserInfo();
             return Availability.available();
-        } catch (NotSignedInException exception){
+        } catch (NotSignedInException exception) {
             return Availability.unavailable("You are not signed in");
         }
     }

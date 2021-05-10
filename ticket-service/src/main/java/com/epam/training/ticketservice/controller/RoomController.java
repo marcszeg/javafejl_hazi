@@ -17,22 +17,22 @@ public class RoomController {
     private RoomService roomService;
     private AdminMethodCheck adminMethodCheck;
 
-    public RoomController(RoomService roomService){
+    public RoomController(RoomService roomService) {
         this.roomService = roomService;
     }
 
-    public Availability isAdminSignedIn(){
+    public Availability isAdminSignedIn() {
         return adminMethodCheck.isAdminSignedIn();
     }
 
     @ShellMethod(key = "create room")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String createRoom(String name, int rows, int columns){
+    public String createRoom(String name, int rows, int columns) {
         String answer;
         try {
             roomService.createRoom(name, rows, columns);
             answer = "Movie created";
-        } catch (RoomExistsException exception){
+        } catch (RoomExistsException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -40,12 +40,12 @@ public class RoomController {
 
     @ShellMethod(key = "update room")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String updateRoom(String name, int rows, int columns){
+    public String updateRoom(String name, int rows, int columns) {
         String answer;
         try {
             roomService.updateRoom(name, rows, columns);
             answer = "Room updated";
-        } catch (RoomNotFoundException exception){
+        } catch (RoomNotFoundException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -53,7 +53,7 @@ public class RoomController {
 
     @ShellMethod(key = "delete room")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String deleteRoom(String name){
+    public String deleteRoom(String name) {
         String answer;
         try {
             roomService.deleteRoom(name);
@@ -65,7 +65,7 @@ public class RoomController {
     }
 
     @ShellMethod(key = "list rooms")
-    public String listRooms(){
+    public String listRooms() {
         List<Room> rooms = roomService.listRooms();
         return rooms.isEmpty() ? "There are no rooms at the moment"
                 : rooms.stream().map(this::mapToStringRoom)
@@ -74,8 +74,10 @@ public class RoomController {
 
     private String mapToStringRoom(Room room) {
         return String.format("Room %s with %d seats, %d rows and %d columns",
-                room.getName(), room.getRows()*room.getColumns(),
-                room.getRows(), room.getColumns());
+                room.getName(),
+                room.getRows() * room.getColumns(),
+                room.getRows(),
+                room.getColumns());
     }
 
 }

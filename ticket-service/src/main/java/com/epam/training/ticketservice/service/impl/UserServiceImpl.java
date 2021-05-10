@@ -18,11 +18,11 @@ public class UserServiceImpl implements UserService {
     public void logInAdmin(String username, String password) throws LoginFailException {
         try {
             User user = userRepository.getUserByUsername(username);
-            if(!user.getPassword().equals(password)){
+            if (!user.getPassword().equals(password)) {
                 throw new LoginFailException("Login failed due to incorrect credentials");
             }
             loggedInUser = user;
-        } catch (UserNotFoundException exception){
+        } catch (UserNotFoundException exception) {
             throw new LoginFailException("Login failed due to incorrect credentials");
         }
     }
@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserInfo() throws NotSignedInException {
-        if(loggedInUser == null){
+        if (loggedInUser == null) {
             throw new NotSignedInException("You are not signed in");
         }
         return loggedInUser;

@@ -11,35 +11,36 @@ import org.springframework.shell.standard.ShellMethod;
 public class UserController {
     private UserService userService;
 
-    private UserController(UserService userService){
+    private UserController(UserService userService) {
         this.userService = userService;
     }
 
     @ShellMethod(key = "sign in privileged")
-    public String logInAdmin(String username, String password){
+    public String logInAdmin(String username, String password) {
         String answer;
         try {
             userService.logInAdmin(username, password);
             answer = "Signed in as admin";
-        } catch (LoginFailException exception){
+        } catch (LoginFailException exception) {
             answer = exception.getMessage();
         }
         return answer;
     }
 
     @ShellMethod(key = "sign out")
-    public String signOut(){
+    public String signOut() {
         String answer = "Signed out";
         return answer;
     }
 
-    public String describeAccount(){
+    @ShellMethod(key = "describe account")
+    public String describeAccount() {
         String answer;
         User user = null;
         try {
             user = userService.getUserInfo();
             answer = String.format("signed in with privileged account %s", user.getUsername());
-        } catch (NotSignedInException exception){
+        } catch (NotSignedInException exception) {
             answer = exception.getMessage();
         }
         return answer;

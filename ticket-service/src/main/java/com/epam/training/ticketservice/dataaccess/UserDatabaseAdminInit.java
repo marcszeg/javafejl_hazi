@@ -11,7 +11,7 @@ public class UserDatabaseAdminInit {
     private UserDao userDao;
 
     @PostConstruct
-    public void databaseAdminInit(){
+    public void databaseAdminInit() {
         userDao.save(new UserEntity("admin", "admin", true));
     }
 

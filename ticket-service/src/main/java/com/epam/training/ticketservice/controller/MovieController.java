@@ -17,22 +17,22 @@ public class MovieController {
     private MovieService movieService;
     private AdminMethodCheck adminMethodCheck;
 
-    public MovieController(MovieService movieService){
+    public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
 
-    public Availability isAdminSignedIn(){
+    public Availability isAdminSignedIn() {
         return adminMethodCheck.isAdminSignedIn();
     }
 
     @ShellMethod(key = "create movie")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String createMovie(String title, String genre, int length){
+    public String createMovie(String title, String genre, int length) {
         String answer;
         try {
             movieService.createMovie(title, genre, length);
             answer = "Movie created";
-        } catch (MovieExistsException exception){
+        } catch (MovieExistsException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -40,12 +40,12 @@ public class MovieController {
 
     @ShellMethod(key = "update movie")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String updateMovie(String title, String genre, int length){
+    public String updateMovie(String title, String genre, int length) {
         String answer;
         try {
             movieService.updateMovie(title, genre, length);
             answer = "Movie updated";
-        } catch (MovieNotFoundException exception){
+        } catch (MovieNotFoundException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -53,7 +53,7 @@ public class MovieController {
 
     @ShellMethod(key = "delete movie")
     @ShellMethodAvailability("isAdminSignedIn")
-    public String deleteMovie(String title){
+    public String deleteMovie(String title) {
         String answer;
         try {
             movieService.deleteMovie(title);
@@ -65,7 +65,7 @@ public class MovieController {
     }
 
     @ShellMethod(key = "list movies")
-    public String listMovies(){
+    public String listMovies() {
         List<Movie> movies = movieService.listMovies();
         return movies.isEmpty() ? "There are no movies at the moment"
                 : movies.stream().map(this::mapToStringMovie)

@@ -17,7 +17,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User getUserByUsername(String username) throws UserNotFoundException {
         Optional<UserEntity> userEntity = userDao.findById(username);
-        if(userEntity.isEmpty()){
+        if (userEntity.isEmpty()) {
             throw new UserNotFoundException("User not found");
         }
         return userMapper.mapToUser(userEntity.get());

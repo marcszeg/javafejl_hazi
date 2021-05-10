@@ -5,7 +5,7 @@ import com.epam.training.ticketservice.domain.Movie;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MovieMapperImpl implements  MovieMapper{
+public class MovieMapperImpl implements  MovieMapper {
 
     @Override
     public Movie fromMapToMovie(MovieEntity movieEntity) {

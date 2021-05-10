@@ -1,7 +1,5 @@
 package com.epam.training.ticketservice.domain;
 
-import javax.persistence.*;
-
 public class Movie {
 
     private String title;
