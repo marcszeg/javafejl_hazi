@@ -1,8 +1,8 @@
 package com.epam.training.ticketservice.ui;
 
 import com.epam.training.ticketservice.core.User;
-import com.epam.training.ticketservice.service.UserService;
-import com.epam.training.ticketservice.service.exception.NotSignedInException;
+import com.epam.training.ticketservice.service.userService.UserService;
+import com.epam.training.ticketservice.service.userService.NotSignedInException;
 import org.springframework.shell.Availability;
 import org.springframework.stereotype.Service;
 

@@ -85,3 +85,13 @@
 1620728100949:create movie Rambo action 79
 1620728125987:list movies
 1620728129815:exit
+1620729113740:sign in privileged admin sadsds
+1620729122974:sign in privileged admin admin
+1620729127849:list movies
+1620729146193:create movie Deadpool action 104
+1620729152115:list movies
+1620729159912:create room Vangelis 20 20
+1620729163708:list rooms
+1620729168990:sign out
+1620729175818:delete room Vangelis
+1620729180162:exit

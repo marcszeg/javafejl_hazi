@@ -1,9 +1,9 @@
 package com.epam.training.ticketservice.ui.command;
 
 import com.epam.training.ticketservice.core.Movie;
-import com.epam.training.ticketservice.repository.exception.MovieExistsException;
-import com.epam.training.ticketservice.repository.exception.MovieNotFoundException;
-import com.epam.training.ticketservice.service.MovieService;
+import com.epam.training.ticketservice.repository.movieRepository.MovieExceptionMovieExists;
+import com.epam.training.ticketservice.repository.movieRepository.MovieExceptionMovieNotFound;
+import com.epam.training.ticketservice.service.movieService.MovieService;
 import com.epam.training.ticketservice.ui.AdminMethodCheck;
 import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
@@ -34,7 +34,7 @@ public class MovieCommand {
         try {
             movieService.createMovie(title, genre, length);
             answer = "Movie created";
-        } catch (MovieExistsException exception) {
+        } catch (MovieExceptionMovieExists exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -47,7 +47,7 @@ public class MovieCommand {
         try {
             movieService.updateMovie(title, genre, length);
             answer = "Movie updated";
-        } catch (MovieNotFoundException exception) {
+        } catch (MovieExceptionMovieNotFound exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -60,7 +60,7 @@ public class MovieCommand {
         try {
             movieService.deleteMovie(title);
             answer = "Movie deleted";
-        } catch (MovieNotFoundException exception) {
+        } catch (MovieExceptionMovieNotFound exception) {
             answer = exception.getMessage();
         }
         return answer;

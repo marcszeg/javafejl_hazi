@@ -1,8 +1,9 @@
 package com.epam.training.ticketservice.service.serviceImpl;
 
 import com.epam.training.ticketservice.core.Movie;
-import com.epam.training.ticketservice.repository.MovieRepository;
-import com.epam.training.ticketservice.repository.exception.MovieExistsException;
+import com.epam.training.ticketservice.repository.movieRepository.MovieRepository;
+import com.epam.training.ticketservice.repository.movieRepository.MovieExceptionMovieExists;
+import com.epam.training.ticketservice.service.movieService.MovieServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -21,7 +22,7 @@ class MovieServiceImplTest {
     private static final Movie movie = new Movie(title, genre, length);
 
     @Test
-    void testCreateMovieShouldCreateMovie() throws MovieExistsException {
+    void testCreateMovieShouldCreateMovie() throws MovieExceptionMovieExists {
         //Given
 
 

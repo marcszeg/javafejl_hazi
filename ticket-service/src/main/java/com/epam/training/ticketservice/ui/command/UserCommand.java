@@ -1,9 +1,9 @@
 package com.epam.training.ticketservice.ui.command;
 
 import com.epam.training.ticketservice.core.User;
-import com.epam.training.ticketservice.service.UserService;
-import com.epam.training.ticketservice.service.exception.LoginFailException;
-import com.epam.training.ticketservice.service.exception.NotSignedInException;
+import com.epam.training.ticketservice.service.userService.UserService;
+import com.epam.training.ticketservice.service.userService.LoginFailException;
+import com.epam.training.ticketservice.service.userService.NotSignedInException;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
