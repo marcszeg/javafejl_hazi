@@ -38,3 +38,50 @@
 1620675215911:sign in privileged admin ddd
 1620675221114:sign in privileged sad ad
 1620675248551:create movie Deadpool action 2016
+1620676027043:exit
+1620726515226:sign in privileged admin asds
+1620726519976:sign in privileged admin admin
+1620726524336:list movies
+1620726554289:create movie Deadpool action100
+1620726600226:create movie Deadpool action 90
+1620726630008:create movie Joker 100
+1620726640679:create movie Joker 120
+1620726653008:create movie Joker 99
+1620726661898:create movie Joker 91
+1620726678109:create movie Joker 89
+1620726687797:create movie Joker 90
+1620726694656:list movies
+1620726709593:exit
+1620727243437:sign in privileged admin admin
+1620727246406:list movies
+1620727260594:create movie Deadpool action 99
+1620727274094:create movie Rambo action 80
+1620727285312:create movie Terminator 100
+1620727291375:stacktree
+1620727299890:stacktrace
+1620727329219:create movie Terminator 100
+1620727335234:stacktrace
+1620727509381:create movie Deadpool action 70
+1620727866676:create movie Terminator 69
+1620727874192:exit
+1620727897317:sign in privileged admin admin
+1620727912551:create movie "Star Wars" sci-fi 120
+1620727936073:create movie Deadpool action 104
+1620727945589:list movies
+1620727955542:create room Vangelis 20 20
+1620727967917:create room Spielberg 40 50
+1620727971636:list rooms
+1620728001573:delete room Spielberg
+1620728005558:list rooms
+1620728016714:update room Vangelis 22 22
+1620728020667:list rooms
+1620728035933:delete movie "Star Wars"
+1620728040277:list movies
+1620728052183:update movie Deadpool comedy 104
+1620728055902:list movies
+1620728064948:describe account
+1620728073027:sign out
+1620728081230:describe account
+1620728100949:create movie Rambo action 79
+1620728125987:list movies
+1620728129815:exit

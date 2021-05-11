@@ -1,6 +1,6 @@
 package com.epam.training.ticketservice.service;
 
-import com.epam.training.ticketservice.domain.User;
+import com.epam.training.ticketservice.core.User;
 import com.epam.training.ticketservice.service.exception.LoginFailException;
 import com.epam.training.ticketservice.service.exception.NotSignedInException;
 

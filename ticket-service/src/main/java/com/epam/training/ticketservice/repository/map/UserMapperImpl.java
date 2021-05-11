@@ -1,8 +1,7 @@
 package com.epam.training.ticketservice.repository.map;
 
-import com.epam.training.ticketservice.dataaccess.UserDao;
-import com.epam.training.ticketservice.dataaccess.entity.UserEntity;
-import com.epam.training.ticketservice.domain.User;
+import com.epam.training.ticketservice.datab.entity.UserEntity;
+import com.epam.training.ticketservice.core.User;
 import org.springframework.stereotype.Component;
 
 @Component

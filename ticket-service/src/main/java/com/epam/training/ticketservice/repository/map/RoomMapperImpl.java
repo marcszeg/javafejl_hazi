@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.repository.map;
 
-import com.epam.training.ticketservice.dataaccess.entity.RoomEntity;
-import com.epam.training.ticketservice.domain.Room;
+import com.epam.training.ticketservice.datab.entity.RoomEntity;
+import com.epam.training.ticketservice.core.Room;
 import org.springframework.stereotype.Component;
 
 @Component

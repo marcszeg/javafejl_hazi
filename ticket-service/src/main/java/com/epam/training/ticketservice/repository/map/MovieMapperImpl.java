@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.repository.map;
 
-import com.epam.training.ticketservice.dataaccess.entity.MovieEntity;
-import com.epam.training.ticketservice.domain.Movie;
+import com.epam.training.ticketservice.datab.entity.MovieEntity;
+import com.epam.training.ticketservice.core.Movie;
 import org.springframework.stereotype.Component;
 
 @Component

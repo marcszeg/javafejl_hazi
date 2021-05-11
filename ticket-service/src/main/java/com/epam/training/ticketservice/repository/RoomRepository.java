@@ -1,6 +1,6 @@
 package com.epam.training.ticketservice.repository;
 
-import com.epam.training.ticketservice.domain.Room;
+import com.epam.training.ticketservice.core.Room;
 import com.epam.training.ticketservice.repository.exception.RoomExistsException;
 import com.epam.training.ticketservice.repository.exception.RoomNotFoundException;
 

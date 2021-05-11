@@ -1,6 +1,6 @@
 package com.epam.training.ticketservice.repository;
 
-import com.epam.training.ticketservice.domain.User;
+import com.epam.training.ticketservice.core.User;
 import com.epam.training.ticketservice.repository.exception.UserNotFoundException;
 
 public interface UserRepository {

@@ -1,7 +1,7 @@
 package com.epam.training.ticketservice.service;
 
 
-import com.epam.training.ticketservice.domain.Movie;
+import com.epam.training.ticketservice.core.Movie;
 import com.epam.training.ticketservice.repository.exception.MovieExistsException;
 import com.epam.training.ticketservice.repository.exception.MovieNotFoundException;
 
