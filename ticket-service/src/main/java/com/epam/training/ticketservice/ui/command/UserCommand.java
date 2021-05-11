@@ -1,9 +1,8 @@
 package com.epam.training.ticketservice.ui.command;
 
 import com.epam.training.ticketservice.core.User;
-import com.epam.training.ticketservice.core.service.userService.UserService;
-import com.epam.training.ticketservice.core.service.userService.UserExceptionLoginFail;
-import com.epam.training.ticketservice.core.service.userService.UserExceptionNotSignedIn;
+import com.epam.training.ticketservice.core.persistance.repository.userrepository.UserException;
+import com.epam.training.ticketservice.core.service.userservice.UserService;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
@@ -21,7 +20,7 @@ public class UserCommand {
         try {
             userService.logInAdmin(username, password);
             answer = "Signed in as admin";
-        } catch (UserExceptionLoginFail exception) {
+        } catch (UserException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -41,7 +40,7 @@ public class UserCommand {
         try {
             user = userService.getUserInfo();
             answer = String.format("signed in with privileged account %s", user.getUsername());
-        } catch (UserExceptionNotSignedIn exception) {
+        } catch (UserException exception) {
             answer = exception.getMessage();
         }
         return answer;

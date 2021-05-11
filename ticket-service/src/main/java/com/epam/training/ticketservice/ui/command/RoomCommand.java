@@ -1,9 +1,8 @@
 package com.epam.training.ticketservice.ui.command;
 
 import com.epam.training.ticketservice.core.Room;
-import com.epam.training.ticketservice.core.persistance.repository.roomRepository.RoomExceptionRoomExists;
-import com.epam.training.ticketservice.core.persistance.repository.roomRepository.RoomExceptionRoomNotFound;
-import com.epam.training.ticketservice.core.service.roomService.RoomService;
+import com.epam.training.ticketservice.core.persistance.repository.roomrepository.RoomException;
+import com.epam.training.ticketservice.core.service.roomservice.RoomService;
 import com.epam.training.ticketservice.ui.AdminMethodCheck;
 import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
@@ -34,7 +33,7 @@ public class RoomCommand {
         try {
             roomService.createRoom(name, rows, columns);
             answer = "Room created";
-        } catch (RoomExceptionRoomExists exception) {
+        } catch (RoomException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -47,7 +46,7 @@ public class RoomCommand {
         try {
             roomService.updateRoom(name, rows, columns);
             answer = "Room updated";
-        } catch (RoomExceptionRoomNotFound exception) {
+        } catch (RoomException exception) {
             answer = exception.getMessage();
         }
         return answer;
@@ -60,7 +59,7 @@ public class RoomCommand {
         try {
             roomService.deleteRoom(name);
             answer = "Room deleted";
-        } catch (RoomExceptionRoomNotFound exception) {
+        } catch (RoomException exception) {
             answer = exception.getMessage();
         }
         return answer;

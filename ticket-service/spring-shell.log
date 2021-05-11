@@ -95,3 +95,14 @@
 1620729168990:sign out
 1620729175818:delete room Vangelis
 1620729180162:exit
+1620754317855:sign in privileged admin dass
+1620754332301:sign in privileged admin admin
+1620754355020:create movie Deadpool 2016 104
+1620754370133:create movie Snatch 99
+1620754400120:exit
+1620754418016:sign in privileged admin admin
+1620754450017:create movie Deadpool action 99
+1620754466397:create movie Snatch action 90
+1620754482587:create movie "Star wars" 120
+1620754496804:create movie "Star Wars" sci-fi 120
+1620754512307:exit
