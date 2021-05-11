@@ -1,8 +1,8 @@
 package com.epam.training.ticketservice.ui;
 
 import com.epam.training.ticketservice.core.User;
-import com.epam.training.ticketservice.service.userService.UserService;
-import com.epam.training.ticketservice.service.userService.NotSignedInException;
+import com.epam.training.ticketservice.core.service.userService.UserService;
+import com.epam.training.ticketservice.core.service.userService.UserExceptionNotSignedIn;
 import org.springframework.shell.Availability;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +23,7 @@ public class AdminMethodCheckImpl implements AdminMethodCheck {
             return user.isAdmin()
                     ? Availability.available()
                     : Availability.unavailable("admin");
-        } catch (NotSignedInException exception) {
+        } catch (UserExceptionNotSignedIn exception) {
             return Availability.unavailable("you are not signed in as admin");
         }
     }

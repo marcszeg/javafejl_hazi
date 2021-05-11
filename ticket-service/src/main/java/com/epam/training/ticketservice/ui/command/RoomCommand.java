@@ -1,9 +1,9 @@
 package com.epam.training.ticketservice.ui.command;
 
 import com.epam.training.ticketservice.core.Room;
-import com.epam.training.ticketservice.repository.roomRepository.RoomExceptionRoomExists;
-import com.epam.training.ticketservice.repository.roomRepository.RoomExceptionRoomNotFound;
-import com.epam.training.ticketservice.service.roomService.RoomService;
+import com.epam.training.ticketservice.core.persistance.repository.roomRepository.RoomExceptionRoomExists;
+import com.epam.training.ticketservice.core.persistance.repository.roomRepository.RoomExceptionRoomNotFound;
+import com.epam.training.ticketservice.core.service.roomService.RoomService;
 import com.epam.training.ticketservice.ui.AdminMethodCheck;
 import org.springframework.shell.Availability;
 import org.springframework.shell.standard.ShellComponent;
