@@ -106,3 +106,8 @@
 1620754482587:create movie "Star wars" 120
 1620754496804:create movie "Star Wars" sci-fi 120
 1620754512307:exit
+1620763302601:sign in privileged admin admin
+1620763330444:create movie Deadpool action 104
+1620763348413:create room Vangelis 20 20
+1620763417851:create screening Deadpool Vangelis 2021-02-15 19:00
+1620763804534:create movie Deadpool action 104
