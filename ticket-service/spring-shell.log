@@ -157,3 +157,5 @@
 1620814145769:list movies
 1620814149156:list rooms
 1620814151504:create screening Deadpool Vangelis "2021-04-01 15:30"
+1620818135092:sign in privileged admin
+1620818148940:exit

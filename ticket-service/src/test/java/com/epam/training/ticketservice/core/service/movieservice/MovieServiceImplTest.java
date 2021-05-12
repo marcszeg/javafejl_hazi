@@ -1,6 +1,7 @@
 package com.epam.training.ticketservice.core.service.movieservice;
 
 import com.epam.training.ticketservice.core.Movie;
+import com.epam.training.ticketservice.core.persistance.entity.MovieEntity;
 import com.epam.training.ticketservice.core.persistance.repository.movierepository.MovieRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,16 +16,14 @@ class MovieServiceImplTest {
     private MovieServiceImpl movieServiceUnderTest;
     private MovieRepository movieRepository;
 
-    private static final String TITLE = "title";
+    private static final String GHOSTBUSTERS = "Ghostbusters";
+    private static final String SNATCH = "Snatch";
     private static final String GENRE = "genre";
     private static final int LENGTH = 90;
-    private static final Movie MOVIE = createMovie(TITLE, GENRE, LENGTH);
-    private static final List<Movie> MOVIES = List.of(MOVIE, MOVIE);
-
-    private static Movie createMovie(String title, String genre, int length) {
-        Movie movie = new Movie(title, genre, length);
-        return movie;
-    }
+    private static final MovieEntity GHOSTBUSTERS_ENTITY = new MovieEntity(GHOSTBUSTERS, GENRE, LENGTH);
+    private static final MovieEntity SNATCH_ENTITY = new MovieEntity(SNATCH, GENRE, LENGTH);
+    private static final Movie GHOSTBUSTERS_MOVIE = new Movie(GHOSTBUSTERS, GENRE, LENGTH);
+    private static final Movie SNATCH_MOVIE = new Movie(SNATCH, GENRE, LENGTH);
 
     @BeforeEach
     public void init() {
@@ -33,10 +32,10 @@ class MovieServiceImplTest {
     }
 
     @Test
-    void testListMoviesShouldListMovies() {
+    void testListMoviesShouldListAllMovies() {
         //Given
-        Mockito.when(movieRepository.listMovies()).thenReturn(List.of(MOVIE, MOVIE));
-        List<Movie> expected = List.of(MOVIE, MOVIE);
+        Mockito.when(movieRepository.listMovies()).thenReturn(List.of(GHOSTBUSTERS_MOVIE, SNATCH_MOVIE));
+        List<Movie> expected = List.of(GHOSTBUSTERS_MOVIE, SNATCH_MOVIE);
 
         //When
         List<Movie> actual = movieServiceUnderTest.listMovies();
@@ -44,8 +43,7 @@ class MovieServiceImplTest {
         //Then
         Assertions.assertEquals(expected, actual);
         Mockito.verify(movieRepository).listMovies();
-        Mockito.verifyNoInteractions(movieRepository);
-
+        Mockito.verifyNoMoreInteractions(movieRepository);
     }
 
 }
