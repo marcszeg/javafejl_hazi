@@ -4,5 +4,5 @@ import com.epam.training.ticketservice.core.persistance.entity.UserEntity;
 import com.epam.training.ticketservice.core.User;
 
 public interface UserMapper {
-    User mapToUser(UserEntity userEntity);
+    User fromUserEntityToUser(UserEntity userEntity);
 }

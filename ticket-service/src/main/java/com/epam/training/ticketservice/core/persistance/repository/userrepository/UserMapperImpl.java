@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public User mapToUser(UserEntity userEntity) {
+    public User fromUserEntityToUser(UserEntity userEntity) {
         return new User(userEntity.getUsername(), userEntity.getPassword(), userEntity.isAdmin());
     }
 }

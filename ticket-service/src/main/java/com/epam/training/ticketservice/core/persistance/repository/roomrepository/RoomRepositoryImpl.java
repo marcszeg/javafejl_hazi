@@ -58,20 +58,20 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public List<Room> listRooms() {
-        return roomDao.findAll().stream().map(this::fromMapToRoom).filter(Optional::isPresent)
+        return roomDao.findAll().stream().map(this::fromEntityToRoom).filter(Optional::isPresent)
                 .map(Optional::get).collect(Collectors.toList());
     }
 
     @Override
     public Room getRoom(String name) throws RoomException {
-        Optional<Room> room = fromMapToRoom(getRoomEntity(name));
+        Optional<Room> room = fromEntityToRoom(getRoomEntity(name));
         if (room.isEmpty()) {
             throw new RoomException("Room not found");
         }
         return room.get();
     }
 
-    private Optional<Room> fromMapToRoom(RoomEntity roomEntity) {
+    private Optional<Room> fromEntityToRoom(RoomEntity roomEntity) {
         Optional<Room> result = Optional.empty();
         result = Optional.of(roomMapper.fromRoomEntityToRoom(roomEntity));
         return result;

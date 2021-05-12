@@ -58,20 +58,20 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     @Override
     public List<Movie> listMovies() {
-        return movieDao.findAll().stream().map(this::fromMapToMovie)
+        return movieDao.findAll().stream().map(this::fromEntityToMovie)
                 .filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
     }
 
     @Override
     public Movie getMovie(String title) throws MovieException {
-        Optional<Movie> movie = fromMapToMovie(getMovieEntity(title));
+        Optional<Movie> movie = fromEntityToMovie(getMovieEntity(title));
         if (movie.isEmpty()) {
             throw new MovieException("Movie not found");
         }
         return movie.get();
     }
 
-    private Optional<Movie> fromMapToMovie(MovieEntity movieEntity) {
+    private Optional<Movie> fromEntityToMovie(MovieEntity movieEntity) {
         Optional<Movie> movie = Optional.empty();
         movie = Optional.of(movieMapper.fromMovieEntityToMovie(movieEntity));
         return movie;

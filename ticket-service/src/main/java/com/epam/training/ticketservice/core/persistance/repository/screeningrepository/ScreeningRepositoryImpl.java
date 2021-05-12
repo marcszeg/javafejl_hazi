@@ -48,17 +48,17 @@ public class ScreeningRepositoryImpl implements ScreeningRepository {
         if (screeningEntity.isEmpty()) {
             throw new ScreeningException("Screening not found");
         }
-        Optional<Screening> screening = fromMapToScreening(screeningEntity.get());
+        Optional<Screening> screening = fromEntityToScreening(screeningEntity.get());
         return screening.get();
     }
 
     @Override
     public List<Screening> listScreenings() {
-        return screeningDao.findAll().stream().map(this::fromMapToScreening).filter(Optional::isPresent)
+        return screeningDao.findAll().stream().map(this::fromEntityToScreening).filter(Optional::isPresent)
                 .map(Optional::get).collect(Collectors.toList());
     }
 
-    private Optional<Screening> fromMapToScreening(ScreeningEntity screeningEntity) {
+    private Optional<Screening> fromEntityToScreening(ScreeningEntity screeningEntity) {
         Optional<Screening> result = Optional.empty();
         return result = Optional.of(screeningMapper.fromScreeningEntityToScreening(screeningEntity));
     }

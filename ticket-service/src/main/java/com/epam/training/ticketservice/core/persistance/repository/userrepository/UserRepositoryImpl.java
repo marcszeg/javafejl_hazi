@@ -24,6 +24,6 @@ public class UserRepositoryImpl implements UserRepository {
         if (userEntity.isEmpty()) {
             throw new UserException("User not found");
         }
-        return userMapper.mapToUser(userEntity.get());
+        return userMapper.fromUserEntityToUser(userEntity.get());
     }
 }
