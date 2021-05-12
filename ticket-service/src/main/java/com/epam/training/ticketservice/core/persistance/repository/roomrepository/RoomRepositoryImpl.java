@@ -25,7 +25,7 @@ public class RoomRepositoryImpl implements RoomRepository {
         if (isRoomAlreadyExsists(room.getName())) {
             throw new RoomException("This room already exists");
         }
-        roomDao.save(roomMapper.fromMapToRoomEntity(room));
+        roomDao.save(roomMapper.fromRoomToRoomEntity(room));
     }
 
     private boolean isRoomAlreadyExsists(String name) {
@@ -64,17 +64,25 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public Room getRoom(String name) throws RoomException {
-        Optional<RoomEntity> roomEntity = roomDao.findById(name);
-        if (roomEntity.isEmpty()) {
+        Optional<Room> room = fromMapToRoom(getRoomEntity(name));
+        if (room.isEmpty()) {
             throw new RoomException("Room not found");
         }
-        Optional<Room> room = fromMapToRoom(roomEntity.get());
         return room.get();
     }
 
     private Optional<Room> fromMapToRoom(RoomEntity roomEntity) {
         Optional<Room> result = Optional.empty();
-        return result = Optional.of(roomMapper.fromMapToRoom(roomEntity));
+        result = Optional.of(roomMapper.fromRoomEntityToRoom(roomEntity));
+        return result;
+    }
+
+    private RoomEntity getRoomEntity(String name) throws RoomException {
+        Optional<RoomEntity> roomEntity = roomDao.findById(name);
+        if (roomEntity.isEmpty()) {
+            throw new RoomException("Room not found");
+        }
+        return roomEntity.get();
     }
 
 }

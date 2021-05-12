@@ -1,4 +1,4 @@
-package com.epam.training.ticketservice.core.service.screeningService;
+package com.epam.training.ticketservice.core.service.screeningservice;
 
 import com.epam.training.ticketservice.core.Movie;
 import com.epam.training.ticketservice.core.Room;
@@ -13,32 +13,42 @@ import com.epam.training.ticketservice.core.persistance.repository.screeningrepo
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Service
-public class ScreeningServiceImpl implements ScreeningService{
+public class ScreeningServiceImpl implements ScreeningService {
 
-    private ScreeningDao screeningDao;
     private ScreeningRepository screeningRepository;
     private MovieRepository movieRepository;
     private RoomRepository roomRepository;
 
+    public ScreeningServiceImpl(ScreeningRepository screeningRepository,
+                                MovieRepository movieRepository, RoomRepository roomRepository) {
+        this.screeningRepository = screeningRepository;
+        this.movieRepository = movieRepository;
+        this.roomRepository = roomRepository;
+    }
+
     @Override
-    public void createScreening(String movieTitle, String roomName, LocalDateTime startDate) throws ScreeningException, ScreeningExceptionOverlapping, ScreeningExceptionBreakOverlapping, MovieException, RoomException {
-        Movie movie = movieRepository.getMovie(movieTitle);
-        Room room = roomRepository.getRoom(roomName);
+    public void createScreening(String movieTitle, String roomName, LocalDateTime startDate)
+            throws ScreeningException, ScreeningExceptionOverlapping,
+            ScreeningExceptionBreakOverlapping, MovieException, RoomException {
+        Movie movie = findMovie(movieTitle);
+        Room room = findRoom(roomName);
         //TO DO
         screeningRepository.createScreening(new Screening(movie, room, startDate));
     }
 
+    private Movie findMovie(String title) throws MovieException {
+        return movieRepository.getMovie(title);
+    }
 
+    private Room findRoom(String name) throws RoomException {
+        return roomRepository.getRoom(name);
+    }
 
     @Override
     public void deleteScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException {
-        /*if (screeningRepository.findScreening(movie, room, startDate).isPresent) {
-
-        }*/
         screeningRepository.deleteScreening(movie, room, startDate);
     }
 

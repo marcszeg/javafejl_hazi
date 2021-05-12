@@ -6,13 +6,12 @@ import com.epam.training.ticketservice.core.persistance.entity.ScreeningEntity;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
-public class ScreeningRepositoryImpl implements ScreeningRepository{
+public class ScreeningRepositoryImpl implements ScreeningRepository {
 
     private ScreeningDao screeningDao;
     private ScreeningMapper screeningMapper;
@@ -24,14 +23,15 @@ public class ScreeningRepositoryImpl implements ScreeningRepository{
 
     @Override
     public void createScreening(Screening screening) throws ScreeningException {
-        if (isScreeningAlreadyExists(screening.getMovie().getTitle(), screening.getRoom().getName(), screening.getStartDate())) {
+        if (isScreeningAlreadyExists(screening.getMovie().getTitle(),
+                screening.getRoom().getName(), screening.getStartDate())) {
             throw new ScreeningException("This screening already exists");
         }
-        screeningDao.save(screeningMapper.fromMapToScreeningEntity(screening));
+        screeningDao.save(screeningMapper.fromScreeningToScreeningEntity(screening));
     }
 
     private boolean isScreeningAlreadyExists(String movie, String room, LocalDateTime startDate) {
-            return screeningDao.findByMovieAndRoomAndStartDate(movie, room, startDate).isPresent();
+        return screeningDao.findByMovieAndRoomAndStartDate(movie, room, startDate).isPresent();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ScreeningRepositoryImpl implements ScreeningRepository{
     @Override
     public Screening findScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException {
         Optional<ScreeningEntity> screeningEntity = screeningDao.findByMovieAndRoomAndStartDate(movie, room, startDate);
-        if (screeningEntity.isEmpty()){
+        if (screeningEntity.isEmpty()) {
             throw new ScreeningException("Screening not found");
         }
         Optional<Screening> screening = fromMapToScreening(screeningEntity.get());
@@ -60,6 +60,6 @@ public class ScreeningRepositoryImpl implements ScreeningRepository{
 
     private Optional<Screening> fromMapToScreening(ScreeningEntity screeningEntity) {
         Optional<Screening> result = Optional.empty();
-        return result = Optional.of(screeningMapper.fromMapToScreening(screeningEntity));
+        return result = Optional.of(screeningMapper.fromScreeningEntityToScreening(screeningEntity));
     }
 }

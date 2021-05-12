@@ -18,23 +18,23 @@ public class ScreeningMapperImpl implements ScreeningMapper {
     }
 
     @Override
-    public Screening fromMapToScreening(ScreeningEntity screeningEntity) {
+    public Screening fromScreeningEntityToScreening(ScreeningEntity screeningEntity) {
         return new Screening(screeningEntity.getId(),
-                movieMapper.fromMapToMovie(screeningEntity.getMovie()),
-                roomMapper.fromMapToRoom(screeningEntity.getRoom()),
+                movieMapper.fromMovieEntityToMovie(screeningEntity.getMovie()),
+                roomMapper.fromRoomEntityToRoom(screeningEntity.getRoom()),
                 screeningEntity.getStartDate());
     }
 
     @Override
-    public ScreeningEntity fromMapToScreeningEntity(Screening screening) {
-        if (screening.getId().equals(null)) {
-            return new ScreeningEntity(movieMapper.fromMapToMovieEntity(screening.getMovie()),
-                    roomMapper.fromMapToRoomEntity(screening.getRoom()),
+    public ScreeningEntity fromScreeningToScreeningEntity(Screening screening) {
+        if (screening.getId() == null) {
+            return new ScreeningEntity(movieMapper.fromMovieToMovieEntity(screening.getMovie()),
+                    roomMapper.fromRoomToRoomEntity(screening.getRoom()),
                     screening.getStartDate());
         } else {
             return new ScreeningEntity(screening.getId(),
-                    movieMapper.fromMapToMovieEntity(screening.getMovie()),
-                    roomMapper.fromMapToRoomEntity(screening.getRoom()),
+                    movieMapper.fromMovieToMovieEntity(screening.getMovie()),
+                    roomMapper.fromRoomToRoomEntity(screening.getRoom()),
                     screening.getStartDate());
         }
     }

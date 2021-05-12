@@ -4,7 +4,7 @@ import com.epam.training.ticketservice.core.persistance.entity.MovieEntity;
 import com.epam.training.ticketservice.core.Movie;
 
 public interface MovieMapper {
-    Movie fromMapToMovie(MovieEntity movieEntity);
+    Movie fromMovieEntityToMovie(MovieEntity movieEntity);
 
-    MovieEntity fromMapToMovieEntity(Movie movie);
+    MovieEntity fromMovieToMovieEntity(Movie movie);
 }

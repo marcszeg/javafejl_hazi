@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.29">
-<file name="C:\Users\hiper\Dokumentumok\javafejl\epam-deik-java-dev-main\final\ticket-service\src\main\java\com\epam\training\ticketservice\core\Screening.java">
+<file name="C:\Users\hiper\Dokumentumok\javafejl\epam-deik-java-dev-main\final\ticket-service\src\main\java\com\epam\training\ticketservice\core\service\screeningservice\ScreeningServiceImpl.java">
+</file>
+<file name="C:\Users\hiper\Dokumentumok\javafejl\epam-deik-java-dev-main\final\ticket-service\src\main\java\com\epam\training\ticketservice\ui\command\ScreeningCommand.java">
 </file>
 </checkstyle>

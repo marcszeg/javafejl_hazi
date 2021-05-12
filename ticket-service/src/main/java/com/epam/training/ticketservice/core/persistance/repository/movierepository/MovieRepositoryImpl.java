@@ -24,7 +24,7 @@ public class MovieRepositoryImpl implements MovieRepository {
         if (isMovieAlreadyExists(movie.getTitle())) {
             throw new MovieException("This movie already exists.");
         }
-        movieDao.save(movieMapper.fromMapToMovieEntity(movie));
+        movieDao.save(movieMapper.fromMovieToMovieEntity(movie));
     }
 
     private boolean isMovieAlreadyExists(String title) {
@@ -64,17 +64,25 @@ public class MovieRepositoryImpl implements MovieRepository {
 
     @Override
     public Movie getMovie(String title) throws MovieException {
-        Optional<MovieEntity> movieEntity = movieDao.findById(title);
-        if (movieEntity.isEmpty()) {
+        Optional<Movie> movie = fromMapToMovie(getMovieEntity(title));
+        if (movie.isEmpty()) {
             throw new MovieException("Movie not found");
         }
-        Optional<Movie> movie = fromMapToMovie(movieEntity.get());
         return movie.get();
     }
 
     private Optional<Movie> fromMapToMovie(MovieEntity movieEntity) {
-        Optional<Movie> result = Optional.empty();
-        return result = Optional.of(movieMapper.fromMapToMovie(movieEntity));
+        Optional<Movie> movie = Optional.empty();
+        movie = Optional.of(movieMapper.fromMovieEntityToMovie(movieEntity));
+        return movie;
+    }
+
+    private MovieEntity getMovieEntity(String title) throws MovieException {
+        Optional<MovieEntity> movieEntity = movieDao.findById(title);
+        if (movieEntity.isEmpty()) {
+            throw new MovieException("Movie not found");
+        }
+        return movieEntity.get();
     }
 
 

@@ -111,3 +111,49 @@
 1620763348413:create room Vangelis 20 20
 1620763417851:create screening Deadpool Vangelis 2021-02-15 19:00
 1620763804534:create movie Deadpool action 104
+1620808000799:sign in privileged admin admin
+1620808014169:create movie Deadpool action 104
+1620808023914:create room Vangelis 20 20
+1620808055369:create screening Deadpool Vangelis "2021-04-02 19:00"
+1620808120959:list screenings
+1620808130109:exit
+1620808222538:list screenings
+1620808231079:list movies
+1620808233939:exit
+1620808472263:list screenings
+1620808527647:delete screening Deadpool Vangelis "2021-04-01 19:00"
+1620808541867:sign in privileged admin admin
+1620808549397:delete screening Deadpool Vangelis "2021-04-01 19:00"
+1620808562227:stacktree
+1620808568792:delete screening Deadpool Vangelis "2021-04-01 19:00"
+1620808572837:stacktrace
+1620808584467:exit
+1620808625017:sign in privileged admin admin
+1620808627227:delete screening Deadpool Vangelis "2021-04-01 19:00"
+1620808634752:stacktrace
+1620808645752:exit
+1620809870110:sign in privileged admin admin
+1620809883294:create movie Deadpool action 104
+1620809895925:create room Vangelis 20 20
+1620809907797:list screenings
+1620809934009:create screening Deadpool Vangelis "2021-04-01 16:30"
+1620809967304:delete screening Deadpool Vangelis "2021-04-01 16:30"
+1620809972450:exit
+1620811199191:sign in privileged admin admin
+1620811208528:create movie Deadpool action 104
+1620811216285:create room Vangelis 20 20
+1620811235681:create screening Deadpool Vangelis "2021-04-01 15:30"
+1620811246995:exit
+1620811698791:sign in privileged admin admin
+1620811709754:create movie Deadpool action 104
+1620811722423:create room Vangelis 20 20
+1620811749289:delete screening Deadpool Vangelis "2021-04-01 15:30"
+1620811758553:stacktrace
+1620814053607:sign in privileged admin admin
+1620814089903:create screening Deadpool Vangelis "2021-04-01 15:30"
+1620814123013:create movie Deadpool action 104
+1620814130189:create screening Deadpool Vangelis "2021-04-01 15:30"
+1620814142319:create room Vangelis 20 20
+1620814145769:list movies
+1620814149156:list rooms
+1620814151504:create screening Deadpool Vangelis "2021-04-01 15:30"
