@@ -2,6 +2,7 @@ package com.epam.training.ticketservice.core.service.roomservice;
 
 import com.epam.training.ticketservice.core.Room;
 import com.epam.training.ticketservice.core.persistance.entity.RoomEntity;
+import com.epam.training.ticketservice.core.persistance.repository.roomrepository.RoomException;
 import com.epam.training.ticketservice.core.persistance.repository.roomrepository.RoomRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,5 +46,6 @@ class RoomServiceImplTest {
         Mockito.verify(roomRepository).listRooms();
         Mockito.verifyNoMoreInteractions(roomRepository);
     }
+
 
 }

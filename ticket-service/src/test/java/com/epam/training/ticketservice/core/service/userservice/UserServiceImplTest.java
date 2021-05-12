@@ -18,6 +18,11 @@ class UserServiceImplTest {
     private UserServiceImpl userServiceUnderTest;
     private UserRepository userRepository;
 
+    private static final String USERNAME = "username";
+    private static final String PASSWORD = "password";
+    private static final boolean IS_ADMIN = true;
+    private static final User USER = new User(USERNAME, PASSWORD, IS_ADMIN);
+
     @BeforeEach
     public void init() {
         userRepository = Mockito.mock(UserRepository.class);
@@ -27,24 +32,22 @@ class UserServiceImplTest {
     @Test
     public void testLoginShouldSetLoggedInWhenUsernameAndPasswordAreCorrect() throws UserException {
         //Given
-        User USER = new User("username", "password", true);
         Mockito.when(userRepository.getUserByUsername(Mockito.any())).thenReturn(USER);
 
         //When
-        userServiceUnderTest.logInAdmin("username", "password");
+        userServiceUnderTest.logInAdmin(USERNAME, PASSWORD);
 
         //Then
         ArgumentCaptor<String> userNameCaptor = ArgumentCaptor.forClass(String.class);
         Mockito.verify(userRepository, Mockito.times(1)).getUserByUsername(userNameCaptor.capture());
         String actual = userNameCaptor.getValue();
-        Assertions.assertEquals("username", actual);
+        Assertions.assertEquals(USERNAME, actual);
         Mockito.verifyNoMoreInteractions(userRepository);
     }
 
     @Test
-    void testSignOutAccountAfterSignIn() throws UserException {
+    void testSignOutUserAfterSignIn() throws UserException {
         //Given
-        User USER = new User("username", "password", true);
         Mockito.when(userRepository.getUserByUsername(Mockito.any())).thenReturn(USER);
 
         //When
@@ -52,6 +55,7 @@ class UserServiceImplTest {
 
         //Then
         assertThrows(UserException.class, () -> userServiceUnderTest.getUserInfo());
+        Mockito.verifyNoMoreInteractions(userRepository);
     }
 
 }
