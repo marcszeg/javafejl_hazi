@@ -24,4 +24,14 @@ public class Movie {
         return length;
     }
 
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        Movie movie = (Movie) o;
+        return (movie.title == this.title
+                && movie.genre == this.genre
+                && movie.length == this.length);
+    }
+
 }

@@ -24,4 +24,14 @@ public class Room {
         return columns;
     }
 
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        Room room = (Room) o;
+        return (room.name == this.name
+                && room.rows == this.rows
+                && room.columns == this.columns);
+    }
+
 }

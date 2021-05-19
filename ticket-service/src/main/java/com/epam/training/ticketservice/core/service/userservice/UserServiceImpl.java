@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
                 throw new UserException("Login failed due to incorrect credentials");
             }
             loggedInUser = user;
-        } catch (com.epam.training.ticketservice.core.persistance.repository.userrepository.UserException exception) {
+        } catch (UserException exception) {
             throw new UserException("Login failed due to incorrect credentials");
         }
     }

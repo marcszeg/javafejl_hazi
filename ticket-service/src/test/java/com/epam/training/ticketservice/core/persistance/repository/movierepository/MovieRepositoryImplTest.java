@@ -22,9 +22,12 @@ class MovieRepositoryImplTest {
     private static final String SNATCH = "Snatch";
     private static final String GENRE = "action";
     private static final int LENGTH = 90;
+    private static final int LENGTH_UPDATE = 104;
     private static final Movie DEADPOOL_MOVIE = new Movie(DEADPOOL, GENRE, LENGTH);
+    private static final Movie DEADPOOL_MOVIE_UPDATE = new Movie(DEADPOOL, GENRE, LENGTH_UPDATE);
     private static final Movie SNATCH_MOVIE = new Movie(SNATCH, GENRE, LENGTH);
     private static final MovieEntity DEADPOOL_MOVIE_ENTITY = new MovieEntity(DEADPOOL, GENRE, LENGTH);
+    private static final MovieEntity DEADPOOL_MOVIE_ENTITY_UPDATE = new MovieEntity(DEADPOOL, GENRE, LENGTH_UPDATE);
     private static final MovieEntity SNATCH_MOVIE_ENTITY = new MovieEntity(SNATCH, GENRE, LENGTH);
     private static final List<Movie> MOVIE_LIST = List.of(SNATCH_MOVIE, SNATCH_MOVIE);
     private static final List<MovieEntity> MOVIE_ENTITY_LIST = List.of(SNATCH_MOVIE_ENTITY, SNATCH_MOVIE_ENTITY);
@@ -47,6 +50,17 @@ class MovieRepositoryImplTest {
 
         //Then
         Mockito.verify(movieDao, Mockito.times(1)).save(SNATCH_MOVIE_ENTITY);
+    }
+
+    @Test
+    void testCreateMovieShouldThrowError() throws MovieException {
+        //Given
+        Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.of(SNATCH_MOVIE_ENTITY));
+
+        //Then
+        assertThrows(MovieException.class, () -> {
+            movieRepositoryUderTest.createMovie(SNATCH_MOVIE);
+        });
     }
 
     @Test
@@ -74,6 +88,39 @@ class MovieRepositoryImplTest {
         Mockito.verify(movieDao, Mockito.times(1)).deleteById(SNATCH);
     }
 
+    @Test
+    void testDeleteMovieShouldThrowError() throws MovieException {
+        //Given
+        Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.empty());
 
+        //Then
+        assertThrows(MovieException.class, () -> {
+            movieRepositoryUderTest.deleteMovie(SNATCH);
+        });
+    }
+
+    @Test
+    void testUpdateMovieShouldUpdateMovie() throws MovieException {
+        //Given
+        Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.of(DEADPOOL_MOVIE_ENTITY));
+
+        //When
+        movieRepositoryUderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
+
+        //Then
+        Mockito.verify(movieDao, Mockito.times(1)).save(DEADPOOL_MOVIE_ENTITY_UPDATE);
+
+    }
+
+    @Test
+    void testUpdateMovieShouldThrowError() throws MovieException {
+        //Given
+        Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.empty());
+
+        //Then
+        assertThrows(MovieException.class, () -> {
+            movieRepositoryUderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
+        });
+    }
 
 }

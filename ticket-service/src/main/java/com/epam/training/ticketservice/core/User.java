@@ -22,4 +22,14 @@ public class User {
     public boolean isAdmin() {
         return isAdmin;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        User user = (User) o;
+        return (user.username == this.username
+                && user.password == this.password
+                && user.isAdmin == this.isAdmin);
+    }
 }

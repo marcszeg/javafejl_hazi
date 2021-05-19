@@ -31,4 +31,14 @@ public class UserEntity {
     public boolean isAdmin() {
         return isAdmin;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        UserEntity userEntity = (UserEntity) o;
+        return (userEntity.username == this.username
+                && userEntity.password == this.password
+                && userEntity.isAdmin == this.isAdmin);
+    }
 }

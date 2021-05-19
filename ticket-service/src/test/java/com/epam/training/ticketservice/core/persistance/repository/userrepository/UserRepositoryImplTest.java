@@ -45,4 +45,15 @@ class UserRepositoryImplTest {
         Assertions.assertEquals(USER, actual);
     }
 
+    @Test
+    void testGetUserInfoShouldThrowError() throws UserException {
+        //Given
+        Mockito.when(userDao.findById(Mockito.any())).thenReturn(Optional.empty());
+
+        //Then
+        assertThrows(UserException.class, () -> {
+            userRepositoryUnderTest.getUserByUsername(USERNAME);
+        });
+    }
+
 }

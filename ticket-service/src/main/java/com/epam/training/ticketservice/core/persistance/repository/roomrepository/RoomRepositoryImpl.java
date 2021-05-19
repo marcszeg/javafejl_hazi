@@ -22,19 +22,19 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public void createRoom(Room room) throws RoomException {
-        if (isRoomAlreadyExsists(room.getName())) {
+        if (isRoomAlreadyExists(room.getName())) {
             throw new RoomException("This room already exists");
         }
         roomDao.save(roomMapper.fromRoomToRoomEntity(room));
     }
 
-    private boolean isRoomAlreadyExsists(String name) {
+    private boolean isRoomAlreadyExists(String name) {
         return roomDao.findById(name).isPresent();
     }
 
     @Override
     public void updateRoom(Room room) throws RoomException {
-        if (!isRoomAlreadyExsists(room.getName())) {
+        if (!isRoomAlreadyExists(room.getName())) {
             throw new RoomException("Room not found");
         }
         RoomEntity roomEntity = getRoomByName(room.getName());
@@ -50,7 +50,7 @@ public class RoomRepositoryImpl implements RoomRepository {
 
     @Override
     public void deleteRoom(String name) throws RoomException {
-        if (!isRoomAlreadyExsists(name)) {
+        if (!isRoomAlreadyExists(name)) {
             throw new RoomException("Room not found");
         }
         roomDao.deleteById(name);

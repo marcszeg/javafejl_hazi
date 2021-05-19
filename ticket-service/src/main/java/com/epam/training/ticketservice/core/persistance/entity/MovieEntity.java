@@ -39,4 +39,14 @@ public class MovieEntity {
     public void setLength(int length) {
         this.length = length;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        MovieEntity movieEntity = (MovieEntity) o;
+        return (movieEntity.title == this.title
+                && movieEntity.genre == this.genre
+                && movieEntity.length == this.length);
+    }
 }

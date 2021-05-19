@@ -16,7 +16,7 @@ class MovieMapperImplTest {
     private static final Movie MOVIE = new Movie("Movie", "genre", 90);
     private static final MovieEntity MOVIE_ENTITY = new MovieEntity("Movie", "genre", 90);
 
-/*
+
     @Test
     void testFromMovieEntityToMovieShouldReturnMovie() {
         //When
@@ -26,7 +26,6 @@ class MovieMapperImplTest {
         Assertions.assertEquals(MOVIE, actual);
     }
 
-
     @Test
     void testFromMovieToMovieEntityShouldReturnMovieEntity() {
         //When
@@ -34,5 +33,5 @@ class MovieMapperImplTest {
 
         //Then
         Assertions.assertEquals(MOVIE_ENTITY, actual);
-    }*/
+    }
 }

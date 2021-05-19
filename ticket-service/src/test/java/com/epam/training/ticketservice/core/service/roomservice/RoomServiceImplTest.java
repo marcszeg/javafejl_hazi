@@ -20,16 +20,43 @@ class RoomServiceImplTest {
     private static final String VANGELIS = "Vangelis";
     private static final String SPIELBERG = "Spielberg";
     private static final int ROWS = 25;
+    private static final int ROWS_UPDATE = 30;
     private static final int COLUMNS = 20;
-    private static final RoomEntity VANGELIS_ENTITY = new RoomEntity(VANGELIS, ROWS, COLUMNS);
-    private static final RoomEntity SPIELBERG_ENTITY = new RoomEntity(SPIELBERG, ROWS, COLUMNS);
     private static final Room VANGELIS_ROOM = new Room(VANGELIS, ROWS, COLUMNS);
+    private static final Room VANGELIS_ROOM_UPDATE = new Room(VANGELIS, ROWS_UPDATE, COLUMNS);
     private static final Room SPIELBERG_ROOM = new Room(SPIELBERG, ROWS, COLUMNS);
 
     @BeforeEach
     public void init() {
         roomRepository = Mockito.mock(RoomRepository.class);
         roomServiceUnderTest = new RoomServiceImpl(roomRepository);
+    }
+
+    @Test
+    void testCreateRoomShouldCreateRoom() throws RoomException {
+        //When
+        roomServiceUnderTest.createRoom(VANGELIS, ROWS, COLUMNS);
+
+        //Then
+        Mockito.verify(roomRepository, Mockito.times(1)).createRoom(VANGELIS_ROOM);
+    }
+
+    @Test
+    void testUpdateRoomShouldUpdateRoom() throws RoomException {
+        //When
+        roomServiceUnderTest.updateRoom(VANGELIS, ROWS_UPDATE, COLUMNS);
+
+        //Then
+        Mockito.verify(roomRepository, Mockito.times(1)).updateRoom(VANGELIS_ROOM_UPDATE);
+    }
+
+    @Test
+    void testDeleteRoomShouldDeleteRoom() throws RoomException {
+        //When
+        roomServiceUnderTest.deleteRoom(VANGELIS);
+
+        //Then
+        Mockito.verify(roomRepository, Mockito.times(1)).deleteRoom(VANGELIS);
     }
 
     @Test

@@ -14,7 +14,6 @@ class UserMapperImplTest {
     private static final User USER = new User("user", "password", true);
     private static final UserEntity USER_ENTITY = new UserEntity("user", "password", true);
 
-/*
     @Test
     void testFromUserEntityToUserShouldReturnUser() {
         //When
@@ -22,7 +21,7 @@ class UserMapperImplTest {
 
         //Then
         Assertions.assertEquals(USER, actual);
-    }*/
+    }
 
 
 }

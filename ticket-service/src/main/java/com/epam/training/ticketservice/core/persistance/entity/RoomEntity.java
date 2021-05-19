@@ -40,4 +40,14 @@ public class RoomEntity {
     public void setColumns(int columns) {
         this.columns = columns;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        RoomEntity roomEntity = (RoomEntity) o;
+        return (roomEntity.name == this.name
+                && roomEntity.rows == this.rows
+                && roomEntity.columns == this.columns);
+    }
 }
