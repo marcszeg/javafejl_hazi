@@ -14,7 +14,7 @@ import java.util.Optional;
 
 class MovieRepositoryImplTest {
 
-    private MovieRepositoryImpl movieRepositoryUderTest;
+    private MovieRepositoryImpl movieRepositoryUnderTest;
     private MovieDao movieDao;
     private MovieMapper movieMapper;
 
@@ -36,7 +36,7 @@ class MovieRepositoryImplTest {
     public void init() {
         movieDao = Mockito.mock(MovieDao.class);
         movieMapper = Mockito.mock(MovieMapper.class);
-        movieRepositoryUderTest = new MovieRepositoryImpl(movieDao, movieMapper);
+        movieRepositoryUnderTest = new MovieRepositoryImpl(movieDao, movieMapper);
     }
 
     @Test
@@ -46,7 +46,7 @@ class MovieRepositoryImplTest {
         Mockito.when(movieMapper.fromMovieToMovieEntity(Mockito.any())).thenReturn(SNATCH_MOVIE_ENTITY);
 
         //When
-        movieRepositoryUderTest.createMovie(SNATCH_MOVIE);
+        movieRepositoryUnderTest.createMovie(SNATCH_MOVIE);
 
         //Then
         Mockito.verify(movieDao, Mockito.times(1)).save(SNATCH_MOVIE_ENTITY);
@@ -59,7 +59,7 @@ class MovieRepositoryImplTest {
 
         //Then
         assertThrows(MovieException.class, () -> {
-            movieRepositoryUderTest.createMovie(SNATCH_MOVIE);
+            movieRepositoryUnderTest.createMovie(SNATCH_MOVIE);
         });
     }
 
@@ -70,7 +70,7 @@ class MovieRepositoryImplTest {
         Mockito.when(movieMapper.fromMovieEntityToMovie(Mockito.any())).thenReturn(SNATCH_MOVIE);
 
         //When
-        List<Movie> actual = movieRepositoryUderTest.listMovies();
+        List<Movie> actual = movieRepositoryUnderTest.listMovies();
 
         //Then
         Assertions.assertEquals(MOVIE_LIST, actual);
@@ -82,7 +82,7 @@ class MovieRepositoryImplTest {
         Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.of(SNATCH_MOVIE_ENTITY));
 
         //When
-        movieRepositoryUderTest.deleteMovie(SNATCH);
+        movieRepositoryUnderTest.deleteMovie(SNATCH);
 
         //Then
         Mockito.verify(movieDao, Mockito.times(1)).deleteById(SNATCH);
@@ -95,7 +95,7 @@ class MovieRepositoryImplTest {
 
         //Then
         assertThrows(MovieException.class, () -> {
-            movieRepositoryUderTest.deleteMovie(SNATCH);
+            movieRepositoryUnderTest.deleteMovie(SNATCH);
         });
     }
 
@@ -105,7 +105,7 @@ class MovieRepositoryImplTest {
         Mockito.when(movieDao.findById(Mockito.any())).thenReturn(Optional.of(DEADPOOL_MOVIE_ENTITY));
 
         //When
-        movieRepositoryUderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
+        movieRepositoryUnderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
 
         //Then
         Mockito.verify(movieDao, Mockito.times(1)).save(DEADPOOL_MOVIE_ENTITY_UPDATE);
@@ -119,7 +119,7 @@ class MovieRepositoryImplTest {
 
         //Then
         assertThrows(MovieException.class, () -> {
-            movieRepositoryUderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
+            movieRepositoryUnderTest.updateMovie(DEADPOOL_MOVIE_UPDATE);
         });
     }
 

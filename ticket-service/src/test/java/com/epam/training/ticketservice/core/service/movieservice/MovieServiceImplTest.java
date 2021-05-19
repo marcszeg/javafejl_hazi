@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.junit.jupiter.api.Assertions;
 
-
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
 class MovieServiceImplTest {
@@ -42,6 +42,17 @@ class MovieServiceImplTest {
     }
 
     @Test
+    void testCreateMovieShouldThrowError() throws MovieException {
+        //Given
+        Mockito.doThrow(MovieException.class).when(movieRepository).createMovie(Mockito.any());
+
+        //Then
+        assertThrows(MovieException.class, () -> {
+            movieServiceUnderTest.createMovie(SNATCH, GENRE, LENGTH);
+        });
+    }
+
+    @Test
     void testUpdateMovieShouldUpdateMovie() throws MovieException {
         //When
         movieServiceUnderTest.updateMovie(SNATCH, GENRE, LENGTH_UPDATE);
@@ -57,6 +68,17 @@ class MovieServiceImplTest {
 
         //Then
         Mockito.verify(movieRepository, Mockito.times(1)).deleteMovie(SNATCH);
+    }
+
+    @Test
+    void testDeleteMovieShouldThrowError() throws MovieException {
+        //Given
+        Mockito.doThrow(MovieException.class).when(movieRepository).deleteMovie(Mockito.any());
+
+        //Then
+        assertThrows(MovieException.class, () -> {
+            movieServiceUnderTest.deleteMovie(SNATCH);
+        });
     }
 
     @Test

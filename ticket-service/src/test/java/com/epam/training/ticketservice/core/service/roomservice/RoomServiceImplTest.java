@@ -42,6 +42,17 @@ class RoomServiceImplTest {
     }
 
     @Test
+    void testCreateRoomShouldThrowError() throws RoomException {
+        //Given
+        Mockito.doThrow(RoomException.class).when(roomRepository).createRoom(Mockito.any());
+
+        //Then
+        assertThrows(RoomException.class, () -> {
+            roomServiceUnderTest.createRoom(SPIELBERG, ROWS, COLUMNS);
+        });
+    }
+
+    @Test
     void testUpdateRoomShouldUpdateRoom() throws RoomException {
         //When
         roomServiceUnderTest.updateRoom(VANGELIS, ROWS_UPDATE, COLUMNS);
@@ -57,6 +68,17 @@ class RoomServiceImplTest {
 
         //Then
         Mockito.verify(roomRepository, Mockito.times(1)).deleteRoom(VANGELIS);
+    }
+
+    @Test
+    void testDeleteRoomShouldThrowError() throws RoomException {
+        //Given
+        Mockito.doThrow(RoomException.class).when(roomRepository).deleteRoom(Mockito.any());
+
+        //Then
+        assertThrows(RoomException.class, () -> {
+            roomServiceUnderTest.deleteRoom(SPIELBERG);
+        });
     }
 
     @Test

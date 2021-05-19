@@ -39,4 +39,15 @@ public class Screening {
     public LocalDateTime getStartDate() {
         return startDate;
     }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        Screening screening = (Screening) o;
+        return (screening.id == this.id
+                && screening.movie == this.movie
+                && screening.room == this.room
+                && screening.startDate == this.startDate);
+    }
 }

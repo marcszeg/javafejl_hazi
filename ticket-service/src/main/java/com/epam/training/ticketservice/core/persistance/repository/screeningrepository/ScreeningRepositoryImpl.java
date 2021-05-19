@@ -31,20 +31,22 @@ public class ScreeningRepositoryImpl implements ScreeningRepository {
     }
 
     private boolean isScreeningAlreadyExists(String movie, String room, LocalDateTime startDate) {
-        return screeningDao.findByMovieAndRoomAndStartDate(movie, room, startDate).isPresent();
+        return screeningDao.findByMovieTitleAndRoomNameAndStartDate(movie, room, startDate).isPresent();
     }
 
     @Override
-    public void deleteScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException {
+    public void deleteScreeningByMovieTitleAndRoomNameAndStartDate(String movie, String room, LocalDateTime startDate)
+            throws ScreeningException {
         if (!isScreeningAlreadyExists(movie, room, startDate)) {
             throw new ScreeningException("Screening not found");
         }
-        screeningDao.deleteByMovieAndRoomAndStartDate(movie, room, startDate);
+        screeningDao.deleteByMovieTitleAndRoomNameAndStartDate(movie, room, startDate);
     }
 
     @Override
     public Screening findScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException {
-        Optional<ScreeningEntity> screeningEntity = screeningDao.findByMovieAndRoomAndStartDate(movie, room, startDate);
+        Optional<ScreeningEntity> screeningEntity = screeningDao
+                .findByMovieTitleAndRoomNameAndStartDate(movie, room, startDate);
         if (screeningEntity.isEmpty()) {
             throw new ScreeningException("Screening not found");
         }

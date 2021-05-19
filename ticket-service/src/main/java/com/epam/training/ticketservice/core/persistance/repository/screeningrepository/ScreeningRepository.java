@@ -10,7 +10,8 @@ public interface ScreeningRepository {
 
     List<Screening> listScreenings();
 
-    void deleteScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException;
+    void deleteScreeningByMovieTitleAndRoomNameAndStartDate(String movie, String room, LocalDateTime startDate)
+            throws ScreeningException;
 
     Screening findScreening(String movie, String room, LocalDateTime startDate) throws ScreeningException;
 }

@@ -1,5 +1,7 @@
 package com.epam.training.ticketservice.core.persistance.entity;
 
+import com.epam.training.ticketservice.core.Screening;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -69,5 +71,16 @@ public class ScreeningEntity {
 
     public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        ScreeningEntity screeningEntity = (ScreeningEntity) o;
+        return (screeningEntity.id == this.id
+                && movie.equals(screeningEntity.movie)
+                && room.equals(screeningEntity.room)
+                && screeningEntity.startDate == this.startDate);
     }
 }

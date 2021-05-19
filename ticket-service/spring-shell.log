@@ -159,3 +159,31 @@
 1620814151504:create screening Deadpool Vangelis "2021-04-01 15:30"
 1620818135092:sign in privileged admin
 1620818148940:exit
+1621439737992:sign in privileged admin admin
+1621439753023:create movie Deadpool action 104
+1621439762758:create room Spielberg 20 20
+1621439801530:create screening Deadpool Spielberg "2021-03-14 15:30"
+1621439961515:list screenings
+1621439976224:delete screening Deadpool Spielberg "2021-03-14 15:30"
+1621440015505:stacktrace
+1621440053209:exit
+1621440959505:sign in privileged admin admin
+1621440972130:create movie Deadpool action 104
+1621440981630:create room Spielberg 20 20
+1621441016396:create screening Terminator Spelberg "2021-04-02 15:30"
+1621441040833:create screening Deadpool Spielberg "2021-04-02 15:30"
+1621441047333:list screenings
+1621441070081:screate screening Deadpool Spielberg "2021-04-02 16:30"
+1621441077894:create screening Deadpool Spielberg "2021-04-02 16:30"
+1621441104222:create screening Deadpool Spielberg "2021-04-02 17:20"
+1621441144659:delete screening Deadpool Spielberg "2021-04-02 16:30"
+1621441165925:delete screening Deadpool Spielberg "2021-04-02 15:30"
+1621441229110:stacktrace
+1621441561877:exit
+1621441595346:sign in privileged admin admin
+1621441608900:create movie Deadpool action 104
+1621441617837:create room Spielberg 20 20
+1621441645431:create screening Deadpool Spileberg "2021-04-02 15:30"
+1621441661540:create screening Deadpool Spielberg "2021-04-02 15:30"
+1621441666665:list screenings
+1621441683540:delete screening Deadpool Spielberg "2021-04-02 15:30"

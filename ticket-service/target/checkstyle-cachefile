@@ -1,4 +1,4 @@
-#Wed May 19 17:14:25 CEST 2021
+#Wed May 19 20:32:21 CEST 2021
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningMapper.java=1620815347422
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\roomrepository\\RoomMapperImpl.java=1620815365832
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\resources\\application.properties=1620671459698
@@ -13,18 +13,18 @@ C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticke
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\movieservice\\MovieServiceImpl.java=1620747781151
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\ui\\dateformat\\DateFormat.java=1620809217147
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\RoomDao.java=1620742447835
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\Screening.java=1620763741141
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\Screening.java=1621438613030
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserMapper.java=1620815531268
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\entity\\ScreeningEntity.java=1620807102926
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\entity\\ScreeningEntity.java=1621446519798
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\roomrepository\\RoomRepository.java=1620747780982
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\User.java=1621419692122
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserMapperImpl.java=1620815531252
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\userservice\\UserService.java=1620748429985
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\movierepository\\MovieRepositoryImpl.java=1620815466968
 module-resource*?\:checkstyle-xpath-suppressions.xml=B590280EF9500302E19EB878F98D4DFC5199F82C
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningRepository.java=1620763741172
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningRepository.java=1621441740907
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\UserDatabaseAdminInit.java=1620742447819
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\screeningservice\\ScreeningServiceImpl.java=1620812294608
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\screeningservice\\ScreeningServiceImpl.java=1621441566049
 module-resource*?\:checkstyle-suppressions.xml=145A0C9BDFEB097CD6187269724AD89CC388B3CB
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningException.java=1620758326863
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserRepository.java=1620747780904
@@ -38,7 +38,7 @@ C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticke
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\Application.java=1620665828603
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\UserDao.java=1620742447522
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningMapperImpl.java=1620815382998
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\ScreeningDao.java=1620763741210
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\ScreeningDao.java=1621443579418
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\MovieDao.java=1620742447632
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\ui\\command\\ScreeningCommand.java=1620812316693
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserRepositoryImpl.java=1620815531237
@@ -52,7 +52,7 @@ configuration*?=41F672D1CDF396272E816DB154BDF3FCC9D2FB4F
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\Room.java=1621419710534
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\entity\\UserEntity.java=1621419662985
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\movieservice\\MovieService.java=1620747781035
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningRepositoryImpl.java=1620815438098
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningRepositoryImpl.java=1621443602363
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\movierepository\\MovieException.java=1620747780766
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\service\\screeningservice\\ScreeningService.java=1620807547851
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\ui\\command\\RoomCommand.java=1620747781066

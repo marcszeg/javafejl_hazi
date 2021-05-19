@@ -1,12 +1,14 @@
 com\epam\training\ticketservice\core\persistance\repository\movierepository\MovieRepositoryImplTest.class
-com\epam\training\ticketservice\ui\command\MovieCommandTest.class
 com\epam\training\ticketservice\core\persistance\repository\movierepository\MovieMapperImplTest.class
 com\epam\training\ticketservice\core\persistance\repository\userrepository\UserRepositoryImplTest.class
-com\epam\training\ticketservice\ui\command\UserCommandTest.class
 com\epam\training\ticketservice\core\persistance\repository\roomrepository\RoomRepositoryImplTest.class
 com\epam\training\ticketservice\core\persistance\repository\userrepository\UserMapperImplTest.class
 com\epam\training\ticketservice\ui\command\RoomCommandTest.class
+com\epam\training\ticketservice\core\service\movieservice\MovieServiceImplTest.class
+com\epam\training\ticketservice\ui\command\MovieCommandTest.class
+com\epam\training\ticketservice\ui\command\UserCommandTest.class
+com\epam\training\ticketservice\core\service\screeningservice\ScreeningServiceImplTest.class
+com\epam\training\ticketservice\core\persistance\repository\screeningrepository\ScreeningRepositoryImplTest.class
 com\epam\training\ticketservice\core\service\roomservice\RoomServiceImplTest.class
 com\epam\training\ticketservice\core\service\userservice\UserServiceImplTest.class
 com\epam\training\ticketservice\core\persistance\repository\roomrepository\RoomMapperImplTest.class
-com\epam\training\ticketservice\core\service\movieservice\MovieServiceImplTest.class

@@ -9,7 +9,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ScreeningDao extends JpaRepository<ScreeningEntity, UUID> {
-    Optional<ScreeningEntity> findByMovieAndRoomAndStartDate(String movie, String room, LocalDateTime startDate);
+    Optional<ScreeningEntity> findByMovieTitleAndRoomNameAndStartDate(String movie, String room,
+                                                                      LocalDateTime startDate);
 
-    void deleteByMovieAndRoomAndStartDate(String movie, String room, LocalDateTime startDate);
+    void deleteByMovieTitleAndRoomNameAndStartDate(String movie, String room, LocalDateTime startDate);
 }
