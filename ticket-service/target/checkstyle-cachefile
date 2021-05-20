@@ -1,4 +1,4 @@
-#Wed May 19 20:32:21 CEST 2021
+#Thu May 20 10:28:43 CEST 2021
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningMapper.java=1620815347422
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\roomrepository\\RoomMapperImpl.java=1620815365832
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\resources\\application.properties=1620671459698
@@ -15,7 +15,7 @@ C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticke
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\RoomDao.java=1620742447835
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\Screening.java=1621438613030
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserMapper.java=1620815531268
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\entity\\ScreeningEntity.java=1621446519798
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\entity\\ScreeningEntity.java=1621498765314
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\roomrepository\\RoomRepository.java=1620747780982
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\User.java=1621419692122
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserMapperImpl.java=1620815531252
@@ -38,7 +38,7 @@ C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticke
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\Application.java=1620665828603
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\UserDao.java=1620742447522
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\screeningrepository\\ScreeningMapperImpl.java=1620815382998
-C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\ScreeningDao.java=1621443579418
+C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\ScreeningDao.java=1621498825799
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\dao\\MovieDao.java=1620742447632
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\ui\\command\\ScreeningCommand.java=1620812316693
 C\:\\Users\\hiper\\Dokumentumok\\javafejl\\epam-deik-java-dev-main\\final\\ticket-service\\src\\main\\java\\com\\epam\\training\\ticketservice\\core\\persistance\\repository\\userrepository\\UserRepositoryImpl.java=1620815531237
